@@ -1,0 +1,47 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[12pt, a4paper]{styles/awesome-cv}
+
+%-------------------------------------------------------------------------------
+%	个人信息（模板占位）
+%-------------------------------------------------------------------------------
+% 头像文件（模板图）
+\photo[rectangle,edge,left]{assets/profile.png}
+
+\name{}{赵文彪}
+\position{算法协会组织部长/学习委员}
+\address{新疆大学}
+
+\mobile{131-8873-7995}
+\email{geneva4869@163.com}
+% \homepage{<个人主页URL>}
+% \github{<GitHub主页URL>}
+\vspace{-3mm}
+\quote{``代码如诗，简洁至上''}
+
+\begin{document}
+
+% 渲染头部
+\makecvheader[C]
+
+% 渲染页脚
+\makecvfooter
+  {\today}
+  {赵文彪~~~·~~~个人简历}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	简历内容
+%-------------------------------------------------------------------------------
+\input{sections/education}
+\input{sections/skills}
+\input{sections/projects}
+\input{sections/honors}
+
+
+\end{document}

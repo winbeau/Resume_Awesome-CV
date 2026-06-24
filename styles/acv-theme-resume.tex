@@ -1,0 +1,116 @@
+%-------------------------------------------------------------------------------
+%                当前中文模板主题
+%-------------------------------------------------------------------------------
+\RequirePackage{xeCJK}
+
+\setCJKmainfont[
+  Path = styles/fonts/zh_CN-Adobe/,
+  Extension = .otf,
+  AutoFakeBold = true,
+  AutoFakeSlant = true
+]{AdobeSongStd-Light}
+
+\setCJKsansfont[
+  Path = styles/fonts/zh_CN-Adobe/,
+  Extension = .otf,
+  AutoFakeBold = true,
+  AutoFakeSlant = true
+]{AdobeHeitiStd-Regular}
+
+\setCJKmonofont[
+  Path = styles/fonts/zh_CN-Adobe/,
+  Extension = .otf,
+  AutoFakeBold = true,
+  AutoFakeSlant = true
+]{AdobeHeitiStd-Regular}
+
+\setCJKfamilyfont{kai}[
+  Path = styles/fonts/zh_CN-Adobe/,
+  Extension = .otf,
+  AutoFakeBold = true
+]{AdobeKaitiStd-Regular}
+\newcommand{\kai}{\CJKfamily{kai}}
+
+\linespread{1.25}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\colorlet{awesome}{awesome-red}
+\definecolor{darktext}{HTML}{3A3A3A}
+\definecolor{graytext}{HTML}{3E3E3E}
+\definecolor{lighttext}{HTML}{4E4E4E}
+
+\renewcommand*{\headerfirstnamestyle}[1]{{\fontsize{30pt}{1em}\headerfont\bfseries #1}}
+\renewcommand*{\headerlastnamestyle}[1]{{\fontsize{30pt}{1em}\headerfont\bfseries #1}}
+\renewcommand*{\headerpositionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\color{awesome}{#1}}}
+\renewcommand*{\headeraddressstyle}[1]{{\fontsize{12pt}{1em}\headerfont\itshape\color{lighttext}{#1}}}
+\renewcommand*{\headersocialstyle}[1]{{\fontsize{10pt}{1em}\headerfont\color{text}{#1}}}
+\renewcommand*{\headerquotestyle}[1]{{\fontsize{11pt}{1.2em}\bodyfont\itshape\color{darktext}{#1}}}
+
+\renewcommand{\acvHeaderAfterNameSkip}{5mm}
+\renewcommand{\acvHeaderAfterPositionSkip}{1.2mm}
+\renewcommand{\acvHeaderAfterAddressSkip}{0mm}
+\renewcommand{\acvHeaderAfterSocialSkip}{3mm}
+\renewcommand{\acvHeaderAfterQuoteSkip}{8mm}
+
+\renewcommand*{\entrytitlestyle}[1]{{\fontsize{13pt}{18pt}\bodyfont\bfseries\color{darktext}{#1}}}
+\renewcommand*{\entrypositionstyle}[1]{{\fontsize{12pt}{17pt}\bodyfont\scshape\color{graytext}{#1}}}
+\renewcommand*{\entrylocationstyle}[1]{{\fontsize{12pt}{17pt}\bodyfontlight\slshape\color{awesome}{#1}}}
+\renewcommand*{\entrydatestyle}[1]{{\fontsize{12pt}{17pt}\bodyfontlight\slshape\color{graytext}{#1}}}
+\renewcommand*{\descriptionstyle}[1]{{\fontsize{12pt}{18pt}\bodyfontlight\color{text}{#1}}}
+\renewcommand*{\skilltypestyle}[1]{{\fontsize{12pt}{18pt}\bodyfont\bfseries\color{darktext}{#1}}}
+\renewcommand*{\skillsetstyle}[1]{{\fontsize{12pt}{18pt}\bodyfontlight\color{text}{#1}}}
+\IfFontExistsTF{Times New Roman}{%
+  \newfontfamily\projectrolefont{Times New Roman}%
+}{%
+  \newfontfamily\projectrolefont{TeX Gyre Termes}%
+}
+\newcommand*{\projectrolestyle}[1]{{\fontsize{12pt}{17pt}\projectrolefont\color{graytext}{#1}}}
+\newcommand*{\projectdatestyle}[1]{{\entrydatestyle{\detokenize{#1}}}}
+
+\renewcommand*{\sectionstyle}[1]{%
+  {\fontsize{18pt}{22pt}\bodyfont\bfseries #1}%
+}
+
+\renewcommand*{\cventry}[5]{%
+  \vspace{1mm}
+  \setlength\tabcolsep{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 7cm} R{7cm}}
+    \entrytitlestyle{#2} & \entrylocationstyle{#3} \\[-0.5mm]
+    \entrypositionstyle{#1} & \entrydatestyle{#4} \\[0mm]
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}
+  \vspace{-2mm}
+}
+
+\newcommand*{\cvproject}[4]{%
+  \vspace{1mm}
+  \setlength\tabcolsep{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 7cm} R{7cm}}
+    \entrytitlestyle{#1} & \entrylocationstyle{#3} \\[-0.5mm]
+    \projectrolestyle{#2} & \projectdatestyle{#4} \\[0mm]
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{}}%
+  \end{tabular*}
+  \vspace{-2mm}
+}
+
+\renewcommand*{\cvhonor}[4]{%
+  \honordatestyle{#4}%
+  & \honorpositionstyle{#1} \honortitlestyle{#2}%
+  & \honorlocationstyle{#3}%
+  \\
+}
+
+\renewcommand*{\honordatestyle}[1]{%
+  {\fontsize{12pt}{16pt}\bodyfont\bfseries\color{darktext} #1}%
+}
+
+\renewcommand*{\honorpositionstyle}[1]{%
+  {\fontsize{12pt}{16pt}\bodyfont\bfseries\color{darktext} #1}%
+}
+
+\renewcommand*{\honortitlestyle}[1]{%
+  {\fontsize{12pt}{16pt}\bodyfont\bfseries\color{darktext} #1}%
+}
+
+\renewcommand*{\honorlocationstyle}[1]{%
+  {\fontsize{12pt}{16pt}\bodyfont\bfseries\color{darktext} #1}%
+}
