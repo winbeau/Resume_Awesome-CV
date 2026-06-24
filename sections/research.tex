@@ -16,7 +16,7 @@
         \item {实现 Method 2/3——按头型分配金字塔缓存策略 + Ragged-Cache Attention 与多帧算子融合（H200 上 30s 单视频推理时间 160s → 47s）；独立完成 VBench-Long 实验。}
         \item {\textbf{[机制洞察]} 从 RoPE 周期性视角解释长视频 attention collapse：首帧 sink 与周期性误判邻近帧叠加成双重坍缩，据此统一解释 LongLive、Deep Forcing 等效果增益。}
         \item {\textbf{[评测反思]} 审计 VBench-Long 4 个 GRiT 语义维度（object / multiple-objects / color / spatial）：揭示以固定字符串匹配 GRiT 开放词表生成输出造成的模型无关 false-miss（同义词/复数/多词），质疑其构念效度并给出 drop-in 修复。}
-        \item {\textbf{Stanford CS336 · A1}（入组考核）：从零实现 Transformer 训练全链路（BPE tokenizer / 架构 / 训练循环）。}
+        \item {\textbf{Stanford CS336 · A1}（入组考核）：从零实现 Transformer 训练全链路（BPE tokenizer / 架构 / 训练）。}
       \end{cvitems}
     }
   % --- NLPCC 2026 Task 10 ---
