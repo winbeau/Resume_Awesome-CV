@@ -3,21 +3,31 @@
 \cvsection{\textcolor{awesome}{科研}经历}
 \vspace{-3mm}
 \begin{cventries}
+  % --- 北大 IfLab / Pyramid Forcing ---
   \cventry
-    {研究实习生 · 自回归视频生成方向} % 角色/方向
+    {研究实习生 · 自回归视频生成方向} % 角色
     {北京大学 IfLab 课题组} % 机构
     {远程 / 北京} % 地点【待确认】
     {2025.0X - 至今} % 时间【待确认】
     {
       \vspace{-4mm}
       \begin{cvitems}
-        \item {\textbf{Pyramid Forcing}：Head-Aware 金字塔式 \textbf{KV Cache} 框架，面向长视频自回归生成（NeurIPS 在投，核心贡献者）。}
-        \item {\textbf{[提出]} 提出注意力 Head-level 分类思路——重审历史帧注意力，发现并定义三类头：Anchor（长程上下文）、Wave（周期性时序）、Veil（聚焦首帧与邻近帧），打破"所有头同质保留历史帧"的既有假设。}
-        \item {\textbf{[实现]} 实现 Method 2/3：按头型分配金字塔缓存策略（Adaptive Strided Sliding Window / Periodic Sampling / Cache Merging），并设计 Ragged-Cache Attention 与多帧注意力融合算子，kernel launch 降低逾 2/3。}
-        \item {\textbf{[实验]} 独立完成绝大部分实验：VBench-Long 上 Self Forcing 60s 总分由 77.87 提升至 81.21、Causal Forcing 30s 动态度由 61.38 提升至 82.67；H200 峰值显存 36.32 GB、11.98 FPS。}
-        \item {\textbf{[机制洞察]} 从 RoPE 周期性视角解释长视频 attention collapse：低维短周期叠加固定训练窗口，推理超窗后周期性将首帧误判为邻近帧、与 attention sink 形成双重坍缩与周期性震颤；据此统一解释 LongLive、Deep Forcing 的 VBench-Long 增益。}
-        \item {\textbf{[复现]} 复现并测试 Self-Forcing / Causal Forcing / Rolling Forcing / Deep Forcing 等经典 Forcing 系列工作；搭建 \textbf{VBench-Long} 评测与结果可视化流水线（t2v-eval）。}
-        \item {\textbf{Stanford CS336 · Assignment 1（入组考核）}：不依赖高层封装，从零实现 Transformer 训练全链路，训练可生成连贯文本的 GPT。}
+        \item {\textbf{Pyramid Forcing}（Head-Aware 金字塔 \textbf{KV Cache}，长视频自回归生成，NeurIPS 在投，核心贡献者）：提出注意力 Head-level 分类思路，发现并定义 Anchor / Wave / Veil 三类头，打破"历史帧同质保留"假设。}
+        \item {实现 Method 2/3——按头型分配金字塔缓存策略 + Ragged-Cache Attention 与多帧算子融合（kernel launch 降逾 2/3）；独立完成绝大部分实验：VBench-Long 上 Self Forcing 60s $77.87\to81.21$、Causal Forcing 30s 动态度 $61.38\to82.67$（H200）。}
+        \item {\textbf{[机制洞察]} 从 RoPE 周期性视角解释长视频 attention collapse：首帧 sink 与周期性误判邻近帧叠加成双重坍缩，据此统一解释 LongLive、Deep Forcing 的 VBench-Long 增益。}
+        \item {复现并测试 Self / Causal / Rolling / Deep Forcing 等 Forcing 系列工作；Stanford CS336 A1（入组考核）从零实现 Transformer 训练全链路。}
+      \end{cvitems}
+    }
+  % --- NLPCC 2026 Task 10 ---
+  \cventry
+    {科学声明忠实度判别 ｜ Track 2 第一 · Track 1 第二 · 队名 xjdx\_001} % 角色/成绩
+    {NLPCC 2026 Shared Task 10 · 综合第一（Phase 1）} % 赛事 + 头衔
+    {\href{https://nlp2ct.github.io/NLPCC-2026-Task10-Science/leaderboard.html}{Phase 1 榜单}} % 链接(awesome色)
+    {2026} % 时间
+    {
+      \vspace{-4mm}
+      \begin{cvitems}
+        \item {\textbf{LoRA 微调多模态 Qwen3-VL}（ms-swift, bf16）做句子级 claim 对图/表证据的 5 类忠实度判别；结合 \textbf{CoT/LoRA 蒸馏}、多模型并集 ensemble 与自定义 softmin loss，应对 Supported 占 93.7\% 的极端类别不均衡。}
       \end{cvitems}
     }
 \end{cventries}
