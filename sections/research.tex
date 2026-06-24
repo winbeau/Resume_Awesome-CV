@@ -11,13 +11,13 @@
     {
       \vspace{-4mm}
       \begin{cvitems}
-        \item {\textbf{Pyramid Forcing（主导课题，预投 NeurIPS）}——面向 Video World Model 长时序生成的 Head-level 动态 KV Cache 优化，独立负责 Idea 提出、Method 实现与 Experiments 评测全流程。}
-        \item {\textbf{[背景]} 针对 Self-Forcing 类长序列自回归视频生成在长帧率下的【待补充：注意力退化 / 显存墙】现象——该问题在长时序推理中直接构成可用性瓶颈。}
-        \item {\textbf{[洞察]} 从第一性原理剖析其 Attention 循环机制，【待补充：填入你真正推导出的数学结论；能白板推导才写「推导并证实其与 RoPE 的交互性质」，否则降级为「实验定位到周期性衰减」】。}
-        \item {\textbf{[行动]} 据此在代码层设计【待补充：Head-level 动态 KV Cache 级联淘汰策略】并重写注意力缓存调度。}
-        \item {\textbf{[成果]} 在【待补充：FVD/SSIM】视觉指标衰减低于【待补充：0.X\%】的约束下，将【待补充：1024】帧推理的 \textbf{KV Cache 显存占用降低【待补充：XX\%】}。}
-        \item {\textbf{t2v-eval（评测平台）}——搭建 \textbf{Vbench-Long} 评测环境与实验结果可视化流水线，支撑 Pyramid Forcing 的指标对比与消融分析。}
-        \item {\textbf{Stanford CS336 · Assignment 1（入组考核）}——不依赖高层封装，从零实现 Transformer 训练全链路（tokenizer / 架构 / 训练循环），训练可生成 120-150 词连贯文本的 GPT。}
+        \item {\textbf{Pyramid Forcing}：Head-Aware 金字塔式 \textbf{KV Cache} 框架，面向长视频自回归生成（NeurIPS 在投，核心贡献者）。}
+        \item {\textbf{[提出]} 提出注意力 Head-level 分类思路——重审历史帧注意力，发现并定义三类头：Anchor（长程上下文）、Wave（周期性时序）、Veil（聚焦首帧与邻近帧），打破"所有头同质保留历史帧"的既有假设。}
+        \item {\textbf{[实现]} 实现 Method 2/3：按头型分配金字塔缓存策略（Adaptive Strided Sliding Window / Periodic Sampling / Cache Merging），并设计 Ragged-Cache Attention 与多帧注意力融合算子，kernel launch 降低逾 2/3。}
+        \item {\textbf{[实验]} 独立完成绝大部分实验：VBench-Long 上 Self Forcing 60s 总分由 77.87 提升至 81.21、Causal Forcing 30s 动态度由 61.38 提升至 82.67；H200 峰值显存 36.32 GB、11.98 FPS。}
+        \item {\textbf{[机制洞察]} 从 RoPE 周期性视角解释长视频 attention collapse：低维短周期叠加固定训练窗口，推理超窗后周期性将首帧误判为邻近帧、与 attention sink 形成双重坍缩与周期性震颤；据此统一解释 LongLive、Deep Forcing 的 VBench-Long 增益。}
+        \item {\textbf{[复现]} 复现并测试 Self-Forcing / Causal Forcing / Rolling Forcing / Deep Forcing 等经典 Forcing 系列工作；搭建 \textbf{VBench-Long} 评测与结果可视化流水线（t2v-eval）。}
+        \item {\textbf{Stanford CS336 · Assignment 1（入组考核）}：不依赖高层封装，从零实现 Transformer 训练全链路，训练可生成连贯文本的 GPT。}
       \end{cvitems}
     }
 \end{cventries}
