@@ -15,8 +15,8 @@
         \item {\textbf{Pyramid Forcing}（核心贡献者·\href{https://github.com/IF-LAB-PKU/Pyramid-Forcing}{IF-LAB-PKU/Pyramid-Forcing}）：提出注意力 Head-level 分类思路。}
         \item {实现 Method 2/3——按头型分配金字塔缓存策略 + Ragged-Cache Attention 与多帧算子融合（H200 上 30s 单视频推理时间 160s → 47s）；独立完成 VBench-Long 实验。}
         \item {\textbf{[机制洞察]} 从 RoPE 周期性视角解释长视频 attention collapse：首帧 sink 与周期性误判邻近帧叠加成双重坍缩，据此统一解释 LongLive、Deep Forcing 等效果增益。}
-        \item {\textbf{[评测反思]} 审计 VBench-Long 评测可靠性，定位四类构念效度失效：dynamic\_degree（连续语义实为二值边界判据、最常报却跨论文差 48 分最难复现）、human\_action（GT 取自文件名而非视频内容）、scene（归一化溢出 + 词法匹配假阴假阳）、spatial\_relationship（方向无符号、水平翻转得分不变）。}
-        \item {\textbf{Stanford CS336 · A1}（入组考核）：从零实现 Transformer 训练全链路（BPE tokenizer / 架构 / 训练）。}
+        \item {\textbf{[评测反思]} 审计 VBench-Long 评测可靠性：dynamic\_degree（最常报却跨论文差距大难复现）、human\_action（取自文件名而非视频内容）、scene（词法匹配假阴假阳）等。}
+        \item {Stanford CS336 · A1（入组考核）：从零实现 Transformer 训练全链路（BPE tokenizer / 架构 / 训练）。}
       \end{cvitems}
     }
   % --- NLPCC 2026 Task 10 ---
