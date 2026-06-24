@@ -41,7 +41,7 @@
     \\[\acvHeaderAfterNameSkip]%
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
     \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
-    \ifthenelse{\isundefined{\@academicinfo}}{}{\headeracademicstyle{\@academicinfo\\[\acvHeaderAfterAddressSkip]}}%
+    \ifthenelse{\isundefined{\@academicinfo}}{}{\headeracademicstyle{\@academicinfo\\[\acvHeaderAfterAcademicSkip]}}%
     \headersocialstyle{%
       \newbool{isstart}\setbool{isstart}{true}%
       \ifthenelse{\isundefined{\@mobile}}{}{\faMobile\acvHeaderIconSep\@mobile\setbool{isstart}{false}}%
