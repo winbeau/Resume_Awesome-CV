@@ -13,8 +13,8 @@
       \vspace{-4mm}
       \begin{cvitems}
         \item {\textbf{Pyramid Forcing}（核心贡献者·\href{https://github.com/IF-LAB-PKU/Pyramid-Forcing}{IF-LAB-PKU/Pyramid-Forcing}）：提出注意力 Head-level 分类思路。}
-        \item {实现 Method 2/3：按头型分配金字塔缓存策略 + Ragged-Cache Attention 与多帧算子融合（H200 上 30s 单视频推理时间 160s → 47s）；独立完成 VBench-Long 实验。}
-        \item {\textbf{[机制洞察]} 从 RoPE 周期性视角解释长视频 attention collapse：首帧 sink 与周期性误判邻近帧叠加成双重坍缩，据此统一解释 LongLive、Deep Forcing 等效果增益。}
+        \item {实现 Method 2/3：按头型分配金字塔缓存策略 + Ragged-Cache Attention 与多帧算子融合（H200 上 30 秒视频推理 160s → 47s，≈3.4× 加速）；独立完成 VBench-Long 实验。}
+        \item {\textbf{[机制洞察]} 从 RoPE 周期性视角解释长视频 attention collapse：首帧 sink 与周期性误判邻近帧叠加成双重坍缩，据此统一解释 LongLive、Deep Forcing 的长视频生成增益。}
         \item {\textbf{[评测反思]} 审计 VBench-Long 评测可靠性：\texttt{dynamic\_degree}（最常报却跨论文差距大难复现）、\texttt{human\_action}（取自文件名而非视频内容）、\texttt{scene}（词法匹配假阴假阳）等。}
       \end{cvitems}
     }
